@@ -8,7 +8,7 @@ import (
 	"os"
 
 	"github.com/aadarsh-nagrath/cli-pallet/cmd/net"
-
+	"github.com/aadarsh-nagrath/cli-pallet/cmd/info"
 	"github.com/spf13/cobra"
 )
 
@@ -35,6 +35,7 @@ func Execute() {
 
 func addSubCommands() {
 	rootCmd.AddCommand(net.NetCmd)
+	rootCmd.AddCommand(info.InfoCmd)
 }
 
 func init() {
