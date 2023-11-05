@@ -10,18 +10,19 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// netCmd represents the net command
-var netCmd = &cobra.Command{
+// NetCmd represents the net command
+var NetCmd = &cobra.Command{
 	Use:   "net",
 	Short: "net is a pkg to hold network related commands",
 	Long: ``,
 	Run: func(cmd *cobra.Command, args []string) {
 		cmd.Help()
+		fmt.Println("so that if somebody called net command directly it could display the help instructions")
+		// so that if somebody called net command directly it could display the help instructions
 	},
 }
 
 func init() {
-	rootCmd.AddCommand(netCmd)
 
 	// Here you will define your flags and configuration settings.
 

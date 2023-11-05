@@ -7,6 +7,8 @@ package cmd
 import (
 	"os"
 
+	"github.com/aadarsh-nagrath/cli-pallet/cmd/net"
+
 	"github.com/spf13/cobra"
 )
 
@@ -16,7 +18,7 @@ import (
 var rootCmd = &cobra.Command{
 	Use:   "cli-pallet",
 	Short: "A brief description of your application",
-	Long: ` OK our application has started working now, lets build the cli using cobra and go`,
+	Long: ` OK our application has started working now, lets build the cli using cobra and go cli-pallet`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	// Run: func(cmd *cobra.Command, args []string) { },
@@ -31,6 +33,10 @@ func Execute() {
 	}
 }
 
+func addSubCommands() {
+	rootCmd.AddCommand(net.NetCmd)
+}
+
 func init() {
 	// Here you will define your flags and configuration settings.
 	// Cobra supports persistent flags, which, if defined here,
@@ -41,6 +47,8 @@ func init() {
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
 	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+
+	addSubCommands()
 }
 
 
