@@ -56,7 +56,14 @@ To build the Gobra-CLI, use the following command:
 go build
 ```
 
-This command will compile the Go source code and generate an executable binary for the CLI. After building, you can use the CLI as described in the usage section above.
+This command will compile the Go source code and generate an executable binary for the CLI. THis command will start downloading necessary dependencies and imports for cli. After building, you can use the CLI as described in the usage section above.
+
+In case if cli-pallet command seems unrecognized due to some reason you can always run command on terminal using dynamic approach
+Just replace cli-pallet with "go run main.go"
+FOr example -
+```sh
+go run main.go net ping --url google.com
+```
 
 For more information on how to use Gobra-CLI and its features, please refer to the documentation or explore the source code in the respective packages. Feel free to contribute or report issues on the project's GitHub repository.
 
